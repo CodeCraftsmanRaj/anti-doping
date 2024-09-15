@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Introduction to Anti-Doping</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Anti-Doping Agency</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </header>
+
+    <section class="module-content">
+        <h1>Module 1: Introduction to Anti-Doping</h1>
+        <p>
+            Anti-doping refers to the set of rules, regulations, and programs designed to promote clean sport by preventing athletes from using prohibited substances or methods to enhance performance. It is not only essential to maintain the integrity of competition but also to protect athletes' health and well-being.
+        </p>
+        <p>
+            Anti-doping agencies, such as the World Anti-Doping Agency (WADA) and national agencies like NADA, are responsible for the implementation of doping regulations. They work in collaboration with sports organizations to create a culture of fair play. These organizations set the rules and administer testing to ensure that athletes comply with anti-doping standards.
+        </p>
+        <p>
+            The core elements of anti-doping include education, testing, and enforcement. Education programs are aimed at informing athletes, coaches, and medical staff about the dangers of doping. Testing involves collecting samples, usually urine or blood, to detect the presence of prohibited substances. Enforcement occurs when athletes are found to have violated anti-doping regulations, resulting in potential sanctions such as bans from competition.
+        </p>
+        <p>
+            The World Anti-Doping Code is a fundamental document that harmonizes anti-doping policies globally. It establishes the rights and responsibilities of athletes and sports organizations. By following this code, all stakeholders ensure that anti-doping regulations are applied fairly and consistently across all sports and countries.
+        </p>
+        <p>
+            Anti-doping education plays a crucial role in the prevention of doping. Athletes need to be fully aware of the risks of doping, including the potential legal, health, and ethical consequences. Educational programs often emphasize the importance of competing with integrity, focusing on long-term athletic development rather than short-term performance enhancement through illicit means.
+        </p>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+        <h2>Quiz: Test Your Knowledge</h2>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. What is the main purpose of anti-doping agencies?</p>
+                <input type="radio" name="q1" value="a"> To enhance athlete performance<br>
+                <input type="radio" name="q1" value="b"> To promote clean sport and fair competition<br>
+                <input type="radio" name="q1" value="c"> To encourage the use of supplements<br>
+            </div>
+            <div class="question">
+                <p>2. What does WADA stand for?</p>
+                <input type="radio" name="q2" value="a"> World Athletics Doping Association<br>
+                <input type="radio" name="q2" value="b"> World Anti-Doping Agency<br>
+                <input type="radio" name="q2" value="c"> World Athlete Drug Agency<br>
+            </div>
+            <div class="question">
+                <p>3. What is a key element of anti-doping efforts?</p>
+                <input type="radio" name="q3" value="a"> Testing athletes for prohibited substances<br>
+                <input type="radio" name="q3" value="b"> Providing performance-enhancing drugs<br>
+                <input type="radio" name="q3" value="c"> Sponsoring athletes to use supplements<br>
+            </div>
+            <div class="question">
+                <p>4. Which of the following is a consequence of violating anti-doping regulations?</p>
+                <input type="radio" name="q4" value="a"> Bans from competition<br>
+                <input type="radio" name="q4" value="b"> Cash rewards<br>
+                <input type="radio" name="q4" value="c"> Public endorsement deals<br>
+            </div>
+            <div class="question">
+                <p>5. What is the primary role of anti-doping education?</p>
+                <input type="radio" name="q5" value="a"> Encouraging athletes to use supplements<br>
+                <input type="radio" name="q5" value="b"> Raising awareness about the dangers of doping<br>
+                <input type="radio" name="q5" value="c"> Helping athletes find ways to avoid testing<br>
+            </div>
+            <div class="submit-btn">
+                <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+        </form>
+        <div id="quiz-result"></div>
+    </section>
+
+    <footer>
+        <p>© 2024 Anti-Doping Education Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function submitQuiz() {
+            var correctAnswers = 0;
+            var totalQuestions = 5;
+
+            var answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'a',
+                q4: 'a',
+                q5: 'b'
+            };
+
+            for (var question in answers) {
+                var selectedOption = document.querySelector('input[name="'+question+'"]:checked');
+                if (selectedOption && selectedOption.value === answers[question]) {
+                    correctAnswers++;
+                }
+            }
+
+            var resultElement = document.getElementById('quiz-result');
+            resultElement.innerHTML = `<h3>You scored ${correctAnswers} out of ${totalQuestions}</h3>`;
+            
+            resultElement.innerHTML += `
+                <p><strong>Correct Answers:</strong></p>
+                <p>1. Anti-doping agencies promote clean sport and fair competition.</p>
+                <p>2. WADA stands for World Anti-Doping Agency.</p>
+                <p>3. Testing athletes for prohibited substances is a key element of anti-doping.</p>
+                <p>4. Bans from competition are a consequence of violating anti-doping regulations.</p>
+                <p>5. Anti-doping education raises awareness about the dangers of doping.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

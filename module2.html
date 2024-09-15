@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Prohibited Substances</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Anti-Doping Agency</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </header>
+
+    <section class="module-content">
+        <h1>Module 2: Prohibited Substances</h1>
+        <p>
+            Prohibited substances are drugs, chemicals, or other agents that athletes are not allowed to use under the World Anti-Doping Code. These substances can provide an unfair competitive advantage and may harm the athlete's health.
+        </p>
+        <p>
+            The list of prohibited substances is updated annually by the World Anti-Doping Agency (WADA). It includes several categories, such as anabolic steroids, stimulants, narcotics, and masking agents. These substances are classified as prohibited in-competition, out-of-competition, or both.
+        </p>
+        <p>
+            Anabolic steroids, such as testosterone and its derivatives, are commonly abused substances that enhance muscle mass and strength. Stimulants like amphetamines increase alertness and reduce fatigue, while narcotics may be used to reduce pain, allowing athletes to perform longer or at higher intensities.
+        </p>
+        <p>
+            The use of prohibited substances not only violates the rules of sport but also puts athletes at risk of serious health problems. For example, the use of anabolic steroids can lead to heart disease, liver damage, and psychological disorders. Stimulants can cause cardiovascular problems, while narcotics may lead to addiction.
+        </p>
+        <p>
+            Athletes are responsible for ensuring that any medication they take does not contain prohibited substances. Therapeutic Use Exemptions (TUEs) allow athletes to take certain medications for legitimate medical conditions, provided they do not give an unfair advantage.
+        </p>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+        <h2>Quiz: Test Your Knowledge</h2>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. What are prohibited substances?</p>
+                <input type="radio" name="q1" value="a"> Supplements that enhance performance<br>
+                <input type="radio" name="q1" value="b"> Drugs that athletes are banned from using<br>
+                <input type="radio" name="q1" value="c"> Food that athletes are encouraged to eat<br>
+            </div>
+            <div class="question">
+                <p>2. How often is the list of prohibited substances updated?</p>
+                <input type="radio" name="q2" value="a"> Every month<br>
+                <input type="radio" name="q2" value="b"> Every year<br>
+                <input type="radio" name="q2" value="c"> Every five years<br>
+            </div>
+            <div class="question">
+                <p>3. What is the primary use of anabolic steroids?</p>
+                <input type="radio" name="q3" value="a"> To reduce pain<br>
+                <input type="radio" name="q3" value="b"> To enhance muscle mass and strength<br>
+                <input type="radio" name="q3" value="c"> To improve mental focus<br>
+            </div>
+            <div class="question">
+                <p>4. What is a potential health risk of using anabolic steroids?</p>
+                <input type="radio" name="q4" value="a"> Improved endurance<br>
+                <input type="radio" name="q4" value="b"> Heart disease<br>
+                <input type="radio" name="q4" value="c"> Increased appetite<br>
+            </div>
+            <div class="question">
+                <p>5. What allows athletes to use certain medications for legitimate medical conditions?</p>
+                <input type="radio" name="q5" value="a"> Medical Authorization Letter<br>
+                <input type="radio" name="q5" value="b"> Therapeutic Use Exemptions (TUEs)<br>
+                <input type="radio" name="q5" value="c"> Special Permit from WADA<br>
+            </div>
+            <div class="submit-btn">
+                <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+        </form>
+        <div id="quiz-result"></div>
+    </section>
+
+    <footer>
+        <p>© 2024 Anti-Doping Education Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function submitQuiz() {
+            var correctAnswers = 0;
+            var totalQuestions = 5;
+
+            var answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b'
+            };
+
+            for (var question in answers) {
+                var selectedOption = document.querySelector('input[name="'+question+'"]:checked');
+                if (selectedOption && selectedOption.value === answers[question]) {
+                    correctAnswers++;
+                }
+            }
+
+            var resultElement = document.getElementById('quiz-result');
+            resultElement.innerHTML = `<h3>You scored ${correctAnswers} out of ${totalQuestions}</h3>`;
+            
+            resultElement.innerHTML += `
+                <p><strong>Correct Answers:</strong></p>
+                <p>1. Prohibited substances are drugs that athletes are banned from using.</p>
+                <p>2. The list of prohibited substances is updated every year.</p>
+                <p>3. Anabolic steroids are primarily used to enhance muscle mass and strength.</p>
+                <p>4. A potential health risk of using anabolic steroids is heart disease.</p>
+                <p>5. Therapeutic Use Exemptions (TUEs) allow athletes to use certain medications for legitimate medical conditions.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Doping Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">Anti-Doping Agency</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#content">Education</a></li>
+            <li><a href="#learning">Learning Modules</a></li>
+            <li><a href="#subscribe">Subscribe</a></li>
+            <li><a href="#chatbot">Chatbot</a></li>
+            <li><select name="language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="es">Spanish</option>
+            </select></li>
+        </ul>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home-section" id="home">
+        <h1>Welcome to the Anti-Doping Education Platform</h1>
+        <p>Ensuring clean sport through comprehensive anti-doping education.</p>
+        <a href="#about" class="cta-btn">Get Started</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>We provide anti-doping education to athletes, coaches, and the sporting community, promoting clean sportsmanship through the power of knowledge.</p>
+        </div>
+    </section>
+
+    <!-- Educational Content Section -->
+    <section class="content-section" id="content">
+        <h2>Educational Resources</h2>
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>Anti-Doping Introduction</h3>
+                <video src="example.mp4" controls></video>
+            </div>
+            <div class="content-card">
+                <h3>Prohibited Substances</h3>
+                <audio src="podcast.mp3" controls></audio>
+                <p class="description">Learn about the substances that are prohibited in sports, and why they pose a risk to fair competition and athlete health.</p>
+                <img src="infographic.jpg" alt="Prohibited Substances Infographic" class="infographic">
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies-section">
+        <h2>Case Studies</h2>
+        <p>Explore real-life scenarios where anti-doping practices were put to the test and learn how athletes dealt with the outcomes.</p>
+        <a href="https://case-studies.example.com" target="_blank" class="case-btn">Know More</a>
+    </section>
+
+    <!-- Learning Modules Section -->
+    <section class="learning-section" id="learning">
+        <h2>Learning Modules</h2>
+        <p>Click on a module below to access detailed information and quizzes on Anti-Doping.</p>
+        <div class="module-buttons">
+            <a href="module1.html" class="module-btn">Module 1: Introduction to Anti-Doping</a>
+            <a href="module2.html" class="module-btn">Module 2: Prohibited Substances</a>
+            <a href="module3.html" class="module-btn">Module 3: Testing and Compliance</a>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="updates-section" id="subscribe">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to get the latest news on anti-doping regulations.</p>
+        <div class="subscribe-form">
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section id="chatbot" class="section">
+        <h2>Chatbot - Ask your Anti-Doping Questions</h2>
+        <div class="chatbot-container">
+            <div id="chatbot-box" class="chatbox">
+                <div id="chatbox-messages">
+                    <p class="chatbot-msg">Hello! I'm here to help you with your anti-doping queries. Ask me anything!</p>
+                </div>
+                <div class="chatbox-input">
+                    <input type="text" id="chat-input" placeholder="Type your question..." onkeypress="handleKeyPress(event)">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Anti-Doping Education Platform. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript (Chatbot Logic) -->
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const chatInput = document.getElementById('chat-input');
+            const chatboxMessages = document.getElementById('chatbox-messages');
+            const userMessage = chatInput.value.trim();
+
+            if (userMessage === "") return;
+
+            // Display user's message
+            const userMessageElement = document.createElement('p');
+            userMessageElement.classList.add('user-msg');
+            userMessageElement.textContent = userMessage;
+            chatboxMessages.appendChild(userMessageElement);
+
+            // Simulate chatbot response
+            const chatbotMessageElement = document.createElement('p');
+            chatbotMessageElement.classList.add('chatbot-msg');
+
+            if (userMessage.toLowerCase().includes("what is nada")) {
+                chatbotMessageElement.textContent = "NADA is the National Anti-Doping Agency responsible for promoting clean sport in India.";
+            } else if (userMessage.toLowerCase().includes("prohibited list")) {
+                chatbotMessageElement.textContent = "The Prohibited List contains substances and methods banned in sports. You can find the full list on NADA's website.";
+            } else {
+                chatbotMessageElement.textContent = "I'm sorry, I don't have information on that right now. Please ask another question.";
+            }
+
+            chatboxMessages.appendChild(chatbotMessageElement);
+            chatInput.value = "";
+        }
+    </script>
+</body>
+</html>
